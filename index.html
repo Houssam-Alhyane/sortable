@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superhero Directory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🦸 Superhero Directory</h1>
+
+      <div class="controls">
+        <input type="text" id="search" placeholder="Search by name..." />
+        <select id="page-size">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th data-column="image">Icon</th>
+              <th data-column="name">Name</th>
+              <th data-column="fullName">Full Name</th>
+              <th data-column="intelligence">Intelligence</th>
+              <th data-column="strength">Strength</th>
+              <th data-column="speed">Speed</th>
+              <th data-column="durability">Durability</th>
+              <th data-column="power">Power</th>
+              <th data-column="combat">Combat</th>
+              <th data-column="race">Race</th>
+              <th data-column="gender">Gender</th>
+              <th data-column="height">Height</th>
+              <th data-column="weight">Weight</th>
+              <th data-column="placeOfBirth">Place Of Birth</th>
+              <th data-column="alignment">Alignment</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button id="prev">← Prev</button>
+        <span id="page-info"></span>
+        <button id="next">Next →</button>
+      </div>
+    </div>
+
+    <!-- PART 1: Data fetching & storage -->
+    <script src="data.js"></script>
+    <!-- PART 2: Sort & filter logic -->
+    <script src="logic.js"></script>
+    <!-- PART 3: DOM rendering & events -->
+    <script src="ui.js"></script>
+  </body>
+</html>
