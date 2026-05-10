@@ -6,9 +6,7 @@ A fast, interactive superhero dashboard built with **pure Vanilla JavaScript** â
 
 ## ğŸ‘¥ Authors
 
-- [msarar](https://learn.zone01oujda.ma/intra/oujda/users/11395)
-- [halhyane](https://learn.zone01oujda.ma/intra/oujda/users/10310)
-- [otalhaou](https://learn.zone01oujda.ma/intra/oujda/users/10980)
+- [halhyane](https://github.com/Houssam-Alhyane)
 
 ---
 
