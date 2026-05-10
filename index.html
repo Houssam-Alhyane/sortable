@@ -4,14 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Superhero Directory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>🦸 Superhero Directory</h1>
+    <!-- HERO MODAL -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-box">
+        <button class="modal-close" id="modal-close">✕</button>
+        <div class="modal-content" id="modal-content"></div>
+      </div>
+    </div>
 
-      <div class="controls">
-        <input type="text" id="search" placeholder="Search by name..." />
+    <div class="container">
+      <header>
+        <h1>HERO<span>BASE</span></h1>
+        <p class="subtitle">731 superheroes · searchable · sortable</p>
+      </header>
+
+      <!-- SEARCH BAR -->
+      <div class="search-bar">
+        <select id="search-field">
+          <option value="name">Name</option>
+          <option value="fullName">Full Name</option>
+          <option value="race">Race</option>
+          <option value="gender">Gender</option>
+          <option value="alignment">Alignment</option>
+          <option value="placeOfBirth">Place of Birth</option>
+        </select>
+        <select id="search-operator">
+          <option value="include">include</option>
+          <option value="exclude">exclude</option>
+          <option value="fuzzy">fuzzy</option>
+          <option value="equal">=</option>
+          <option value="notEqual">≠</option>
+          <option value="gt">&gt;</option>
+          <option value="lt">&lt;</option>
+        </select>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search heroes..."
+          autocomplete="off"
+        />
         <select id="page-size">
           <option value="10">10</option>
           <option value="20" selected>20</option>
@@ -21,6 +61,12 @@
         </select>
       </div>
 
+      <!-- STATS BAR -->
+      <div class="stats-bar">
+        <span id="result-count">Loading...</span>
+      </div>
+
+      <!-- TABLE -->
       <div class="table-wrapper">
         <table>
           <thead>
@@ -28,17 +74,17 @@
               <th data-column="image">Icon</th>
               <th data-column="name">Name</th>
               <th data-column="fullName">Full Name</th>
-              <th data-column="intelligence">Intelligence</th>
-              <th data-column="strength">Strength</th>
-              <th data-column="speed">Speed</th>
-              <th data-column="durability">Durability</th>
-              <th data-column="power">Power</th>
-              <th data-column="combat">Combat</th>
+              <th data-column="intelligence">INT</th>
+              <th data-column="strength">STR</th>
+              <th data-column="speed">SPD</th>
+              <th data-column="durability">DUR</th>
+              <th data-column="power">PWR</th>
+              <th data-column="combat">CMB</th>
               <th data-column="race">Race</th>
               <th data-column="gender">Gender</th>
               <th data-column="height">Height</th>
               <th data-column="weight">Weight</th>
-              <th data-column="placeOfBirth">Place Of Birth</th>
+              <th data-column="placeOfBirth">Place of Birth</th>
               <th data-column="alignment">Alignment</th>
             </tr>
           </thead>
@@ -46,6 +92,7 @@
         </table>
       </div>
 
+      <!-- PAGINATION -->
       <div class="pagination">
         <button id="prev">← Prev</button>
         <span id="page-info"></span>
@@ -53,11 +100,8 @@
       </div>
     </div>
 
-    <!-- PART 1: Data fetching & storage -->
     <script src="data.js"></script>
-    <!-- PART 2: Sort & filter logic -->
     <script src="logic.js"></script>
-    <!-- PART 3: DOM rendering & events -->
     <script src="ui.js"></script>
   </body>
 </html>
